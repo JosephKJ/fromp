@@ -8,6 +8,7 @@ from utils import select_memorable_points, update_fisher, random_memorable_point
 import numpy as np
 import time
 import matplotlib.pyplot as plt
+import os
 
 
 def train(model, dataloaders, memorable_points, criterion, optimizer, task_id=0, num_epochs=25, use_cuda=False):
@@ -173,6 +174,7 @@ def train_model(args, use_cuda=False):
                 plt.scatter(memorable_points[l][:,0], memorable_points[l][:, 1], c='m', s=0.4, marker='x')
 
         plt.show()
+        plt.savefig(os.path.join('task_' + str(tid) + '.png'))
 
         # Calculate and print train accuracy and negative log likelihood
         with torch.no_grad():

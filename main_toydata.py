@@ -26,7 +26,7 @@ def main(args):
 
 
 if __name__ == '__main__':
-
+    torch.multiprocessing.set_sharing_strategy('file_system')
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     print('FROMP on toy data, seed %d' % (args.seed))

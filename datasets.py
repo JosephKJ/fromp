@@ -1,6 +1,6 @@
 import torch
 import numpy as np
-from sklearn.datasets.samples_generator import make_blobs
+from sklearn.datasets import make_blobs
 from torch.utils.data import TensorDataset, Dataset, Subset
 import pickle
 import gzip
